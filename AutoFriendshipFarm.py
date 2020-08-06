@@ -25,10 +25,13 @@ class AutoFriendshipFarm():
         self.teleportname = teleportname
 
     def startAFF(self):
-
+        self.stop_bool = False
         runs_to_do = self.num_runs
 
-        while runs_to_do > 0 and self.stop_bool != True:
+        while runs_to_do > 0:
+            if self.stop_bool == True:
+                num_runs.set("Stopped")
+                break
 
             runs_to_do -= 1
 
@@ -56,7 +59,8 @@ class AutoFriendshipFarm():
             num_runs.set(runs_to_do)
 
     def stopAFF(self):
-        stop_bool = True
+        print("Setting stop bool to true")
+        self.stop_bool = True
 
     def findAndClickButton(self, image):
         image_ff = image + self.file_format
