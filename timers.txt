@@ -1,0 +1,10 @@
+2        //  wait for load screen after clicking ready
+2        //  wait for load screen after clicking select team button
+4        //  wait for load screen after clicking start button
+0.75     //  wait for load screen after clicking bag icon
+0.75     //  wait for load screen after clicking teleporter name
+1.1      //  wait for load screen after clicking confirm button
+0.75     //  wait for load screen after clicking clear portal
+3.5      //  wait for load screen after clicking stop exploring
+1        //  wait for load screen after clicking stage clear
+3        //  wait for load screen after clicking clear confirm button
