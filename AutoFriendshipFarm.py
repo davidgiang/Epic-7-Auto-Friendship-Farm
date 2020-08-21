@@ -23,6 +23,12 @@ class AutoFriendshipFarm():
         self.startbutton = startbutton
         self.stopexploring = stopexploring
         self.teleportname = teleportname
+        self.timers_arr = []
+
+        with open('timers.txt', 'r') as f:
+            for line in f:
+                self.timers_arr.append(line[0])
+            print(self.timers_arr)
 
     def startAFF(self):
         self.stop_bool = False
@@ -36,25 +42,25 @@ class AutoFriendshipFarm():
             runs_to_do -= 1
 
             self.findAndClickButton('readybutton')
-            time.sleep(2)
+            time.sleep(int(self.timers_arr[0]))
             self.findAndClickButton('selectteambutton')
-            time.sleep(2)
+            time.sleep(int(self.timers_arr[1]))
             self.findAndClickButton('startbutton')
-            time.sleep(4)
+            time.sleep(int(self.timers_arr[2]))
             self.findAndClickButton('bagicon')
-            time.sleep(0.75)
+            time.sleep(int(self.timers_arr[3]))
             self.findAndClickButton('teleportname')
-            time.sleep(0.75)
+            time.sleep(int(self.timers_arr[4]))
             self.findAndClickButton('confirmbutton')
-            time.sleep(1.1)
+            time.sleep(int(self.timers_arr[5]))
             self.findAndClickButton('clearportal')
-            time.sleep(0.75)
+            time.sleep(int(self.timers_arr[6]))
             self.findAndClickButton('stopexploring')
-            time.sleep(3.5)
+            time.sleep(int(self.timers_arr[7]))
             self.findAndClickButton('stageclear')
-            time.sleep(1)
+            time.sleep(int(self.timers_arr[8]))
             self.findAndClickButton('clearconfirmbutton')
-            time.sleep(3)
+            time.sleep(int(self.timers_arr[9]))
 
             num_runs.set(runs_to_do)
 
