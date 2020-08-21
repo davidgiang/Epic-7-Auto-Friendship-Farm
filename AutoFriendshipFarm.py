@@ -27,7 +27,13 @@ class AutoFriendshipFarm():
 
         with open('timers.txt', 'r') as f:
             for line in f:
-                self.timers_arr.append(line[0])
+                word = ""
+                for char in line:
+                    if char != " ":
+                        word += char
+                    else:
+                        break
+                self.timers_arr.append(word)
             print(self.timers_arr)
 
     def startAFF(self):
@@ -42,25 +48,25 @@ class AutoFriendshipFarm():
             runs_to_do -= 1
 
             self.findAndClickButton('readybutton')
-            time.sleep(int(self.timers_arr[0]))
+            time.sleep(float(self.timers_arr[0]))
             self.findAndClickButton('selectteambutton')
-            time.sleep(int(self.timers_arr[1]))
+            time.sleep(float(self.timers_arr[1]))
             self.findAndClickButton('startbutton')
-            time.sleep(int(self.timers_arr[2]))
+            time.sleep(float(self.timers_arr[2]))
             self.findAndClickButton('bagicon')
-            time.sleep(int(self.timers_arr[3]))
+            time.sleep(float(self.timers_arr[3]))
             self.findAndClickButton('teleportname')
-            time.sleep(int(self.timers_arr[4]))
+            time.sleep(float(self.timers_arr[4]))
             self.findAndClickButton('confirmbutton')
-            time.sleep(int(self.timers_arr[5]))
+            time.sleep(float(self.timers_arr[5]))
             self.findAndClickButton('clearportal')
-            time.sleep(int(self.timers_arr[6]))
+            time.sleep(float(self.timers_arr[6]))
             self.findAndClickButton('stopexploring')
-            time.sleep(int(self.timers_arr[7]))
+            time.sleep(float(self.timers_arr[7]))
             self.findAndClickButton('stageclear')
-            time.sleep(int(self.timers_arr[8]))
+            time.sleep(float(self.timers_arr[8]))
             self.findAndClickButton('clearconfirmbutton')
-            time.sleep(int(self.timers_arr[9]))
+            time.sleep(float(self.timers_arr[9]))
 
             num_runs.set(runs_to_do)
 
